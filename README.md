@@ -15,6 +15,20 @@ GlwDialog
 ----
 GlwDialog的封装,学习了github上很多优秀的代码,尤其是NiceDialog [点击跳转](https://github.com/SheHuan/NiceDialog)
 
+功能进度
+----
+1.确认弹窗 (已完成)
+
+2.加载提示 (未完成)
+
+3.分享 (未完成)
+
+4.评论 (未完成)
+
+5.好友设置 (未完成)
+
+6.红包 (未完成)
+
 
 
 LICENSE

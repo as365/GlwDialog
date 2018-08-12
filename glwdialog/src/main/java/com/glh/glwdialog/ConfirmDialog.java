@@ -74,9 +74,9 @@ public class ConfirmDialog extends BaseNiceDialog {
         return R.layout.dialog_double;
     }
 
-    private OnDialogSureLitener mOnDialogSureLitener;
+    private OnConfirmDialogLitener mOnDialogSureLitener;
 
-    public ConfirmDialog setOnDialogSureLitener(OnDialogSureLitener mOnDialogSureLitener) {
+    public ConfirmDialog setOnDialogSureLitener(OnConfirmDialogLitener mOnDialogSureLitener) {
         this.mOnDialogSureLitener = mOnDialogSureLitener;
         return this;
     }
@@ -87,13 +87,12 @@ public class ConfirmDialog extends BaseNiceDialog {
         holder.setText(R.id.tv_content, contentStr);
         holder.setImageVisible(R.id.iv_close, isShowIvClose);
 
-
         holder.setOnClickListener(R.id.tv_sure, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
                 if (mOnDialogSureLitener != null) {
-                    mOnDialogSureLitener.onDialogSureClick();
+                    mOnDialogSureLitener.onConfirmDialogSureClick();
                 }
             }
         });

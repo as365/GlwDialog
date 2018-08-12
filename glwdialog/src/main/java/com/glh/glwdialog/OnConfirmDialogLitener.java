@@ -9,7 +9,7 @@ package com.glh.glwdialog;
  * </pre>
  */
 
-public interface OnDialogSureLitener {
+public interface OnConfirmDialogLitener {
 
-    void onDialogSureClick();
+    void onConfirmDialogSureClick();
 }

@@ -5,8 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements OnDialogSureLitener, View
-        .OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +26,12 @@ public class MainActivity extends AppCompatActivity implements OnDialogSureLiten
             case R.id.btn0:
                 showDialog0();
                 break;
-            //            case R.id.btn1:
-            //                showDialog1();
-            //                break;
-            //            case R.id.btn2:
-            //                showDialog2();
-            //                break;
+            case R.id.btn1:
+                showDialog1();
+                break;
+            case R.id.btn2:
+                showDialog2();
+                break;
             //            case R.id.btn3:
             //                showDialog3();
             //                break;
@@ -49,16 +48,43 @@ public class MainActivity extends AppCompatActivity implements OnDialogSureLiten
 
     private void showDialog0() {
         ConfirmDialog.newInstance("测试数据测试测试测试")
-                .setOnDialogSureLitener(this)
+                .setOnDialogSureLitener(new OnConfirmDialogLitener() {
+                    @Override
+                    public void onConfirmDialogSureClick() {
+                        Toast.makeText(MainActivity.this, "被点击了..00", Toast.LENGTH_SHORT).show();
+                    }
+                })
                 .setMargin(30)
                 .setOutCancel(false)
                 .show(getSupportFragmentManager());
 
     }
 
+    private void showDialog1() {
+        ConfirmDialog.newInstance("测试数据测试测试测试", false)
+                .setOnDialogSureLitener(new OnConfirmDialogLitener() {
+                    @Override
+                    public void onConfirmDialogSureClick() {
+                        Toast.makeText(MainActivity.this, "被点击了..111", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setMargin(30)
+                .setOutCancel(false)
+                .show(getSupportFragmentManager());
 
-    @Override
-    public void onDialogSureClick() {
-        Toast.makeText(this, "被点击了", Toast.LENGTH_SHORT).show();
+    }
+
+    private void showDialog2() {
+        ConfirmDialog.newInstance("测试数据测试测试测试", 1)
+                .setOnDialogSureLitener(new OnConfirmDialogLitener() {
+                    @Override
+                    public void onConfirmDialogSureClick() {
+                        Toast.makeText(MainActivity.this, "被点击了..222", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setMargin(30)
+                .setOutCancel(true)
+                .show(getSupportFragmentManager());
+
     }
 }

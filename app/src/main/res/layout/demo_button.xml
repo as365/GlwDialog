@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="确认框(所有右上角)"
+            android:text="确认框(没有右上角)"
             />
 
         <Button
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="确认框(一个确认按钮)"
+            android:text="确认框(只有确认按钮)"
             />
 
         <Button

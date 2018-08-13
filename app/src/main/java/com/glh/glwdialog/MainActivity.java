@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn4:
                 showDialog4();
                 break;
-            //            case R.id.btn5:
-            //                showDialog5();
-            //                break;
+            case R.id.btn5:
+                showDialog5();
+                break;
             default:
                 break;
         }
@@ -94,25 +94,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void showDialog3() {
 
-        ShareDialog.newInstance(1).setOnOnShareDialogLitener(new OnShareDialogLitener() {
+        ShareDialog.newInstance(1).setOnShareDialogLitener(new OnShareDialogLitener() {
             @Override
             public void onShareDialogTypeClick(int mPlatform) {
                 Toast.makeText(MainActivity.this, mPlatform + "....", Toast.LENGTH_SHORT).show();
             }
-        }).setOutCancel(false)
+        }).setOutCancel(true)
                 .show(getSupportFragmentManager());
     }
 
     private void showDialog4() {
 
-        ShareDialog.newInstance(0).setOnOnShareDialogLitener(new OnShareDialogLitener() {
+        TakePhotoDialog.newInstance().setOnTakePhotoDialogLitener(new OnTakePhotoDialogLitener() {
             @Override
-            public void onShareDialogTypeClick(int mPlatform) {
+            public void onTakePhotoDialogTypeClick(int mPlatform) {
                 Toast.makeText(MainActivity.this, mPlatform + "....", Toast.LENGTH_SHORT).show();
             }
         })
+                .setMargin(30)
                 .setShowGrivity(AppGlobal.SHOW_GRAVITY_BOTTOM)
-                .setOutCancel(true)
                 .show(getSupportFragmentManager());
+    }
+
+    private void showDialog5() {
+
+        UpVisionDialog.newInstance("优化bug", false).setOnUpVisionDialogLitener(new OnUpVisionDialogLitener() {
+
+            @Override
+            public void onUpVisionDialogTypeClick() {
+                Toast.makeText(MainActivity.this, "升级中", Toast.LENGTH_SHORT).show();
+            }
+        })
+                .setOutCancel(false).show(getSupportFragmentManager());
     }
 }

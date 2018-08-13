@@ -140,20 +140,20 @@ public abstract class BaseNiceDialog extends DialogFragment {
 
             //设置dialog宽度
             if (width == 0) {
-                lp.width = Utils.getScreenWidth(getContext()) - 2 * Utils.dp2px
+                lp.width = DisplayUtils.getScreenWidth(getContext()) - 2 * DisplayUtils.dip2px
                         (getContext(), margin);
 
             } else if (width == -1) {
                 lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
             } else {
-                lp.width = Utils.dp2px(getContext(), width);
+                lp.width = DisplayUtils.dip2px(getContext(), width);
             }
 
             //设置dialog高度
             if (height == 0) {
                 lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
             } else {
-                lp.height = Utils.dp2px(getContext(), height);
+                lp.height = DisplayUtils.dip2px(getContext(), height);
             }
 
             //设置dialog进入、退出的动画

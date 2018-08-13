@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:gravity="center_horizontal|bottom"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="114.5dp"
+        android:background="@drawable/layout_corners_round_dialog"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        >
+
+        <TextView
+            android:id="@+id/dialog_photo"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:gravity="center"
+            android:text="拍照"
+            android:textColor="@color/base_second_txt_color"
+            android:textSize="17sp"
+            />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/base_bg_line"
+            />
+
+        <TextView
+            android:id="@+id/dialog_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:gravity="center"
+            android:text="从手机相册中获取"
+            android:textColor="@color/base_second_txt_color"
+            android:textSize="17sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/layout_corners_round_dialog"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        >
+
+        <TextView
+            android:id="@+id/dialog_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/base_bg_btn_not"
+            android:textSize="17sp"
+            />
+    </LinearLayout>
+</LinearLayout>

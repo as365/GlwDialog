@@ -22,6 +22,10 @@ public class ShareDialog extends BaseNiceDialog {
      */
     private int mShareType = AppGlobal.SHARE_WITH_INTSIDE;
 
+    public static ShareDialog newInstance() {
+        return newInstance(AppGlobal.SHARE_WITH_INTSIDE);
+    }
+
     public static ShareDialog newInstance(int mShareType) {
 
         Bundle bundle = new Bundle();
@@ -55,7 +59,7 @@ public class ShareDialog extends BaseNiceDialog {
     private OnShareDialogLitener mOnShareDialogLitener;
     private int                  mPlatform;
 
-    public ShareDialog setOnOnShareDialogLitener(OnShareDialogLitener mOnShareDialogLitener) {
+    public ShareDialog setOnShareDialogLitener(OnShareDialogLitener mOnShareDialogLitener) {
         this.mOnShareDialogLitener = mOnShareDialogLitener;
         return this;
     }
@@ -73,9 +77,6 @@ public class ShareDialog extends BaseNiceDialog {
                     shareplatform(R.id.wechat, dialog);
                 }
             });
-
-
-
         } else if (mShareType == AppGlobal.SHARE_WITH_INTSIDE) {
             holder.setViewVisible(R.id.chatRoom, View.VISIBLE);
             holder.setViewVisible(R.id.ll_silkbag, View.VISIBLE);

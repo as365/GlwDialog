@@ -15,14 +15,11 @@ public interface AppGlobal {
     /**
      * 使用dialogFragment形式的常量
      * <p>
-     * <p>
      * int BTN_NUM_SINGLE = 1;  一个按钮,且为确认
      * int BTN_NUM_DOUBLE = 2;  两个按钮,左边取消,右边确认
      * <p>
-     * <p>
      * int SHARE_ONLY_OUTSIDE = 0;
      * int SHARE_WITH_INTSIDE = 1;
-     * <p>
      * <p>
      * int SHOW_GRAVITY_CENTER = 0; 弹窗显示位置.居中
      * int SHOW_GRAVITY_BOTTOM = 1; 底部

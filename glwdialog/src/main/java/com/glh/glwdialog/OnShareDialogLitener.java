@@ -11,5 +11,5 @@ package com.glh.glwdialog;
 
 public interface OnShareDialogLitener {
 
-    void onShareDialogTypeClick(int mPlatform);
+    void onShareDialogTypeClick(int mlatform);
 }

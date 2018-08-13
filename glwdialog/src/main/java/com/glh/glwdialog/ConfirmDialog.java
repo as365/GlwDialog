@@ -9,9 +9,9 @@ import android.view.View;
  * <p>
  *
  * @author :高磊华
- * @version :5.0.1
+ * @version :0.2.0
  * @date : 2018/08/09
- * desc    : 两个按钮的对话框
+ * desc    : 确认 弹窗
  * </pre>
  */
 
@@ -21,8 +21,10 @@ public class ConfirmDialog extends BaseNiceDialog {
 
     /**
      * 默认右上角的× 是显示的
+     * true: 显示
+     * false:不显示
      */
-    private boolean isShowIvClose = false;
+    private boolean isShowIvClose = true;
 
     /**
      * 默认是两个按钮
@@ -71,7 +73,7 @@ public class ConfirmDialog extends BaseNiceDialog {
 
     @Override
     public int intLayoutId() {
-        return R.layout.dialog_double;
+        return R.layout.dialog_confirm;
     }
 
     private OnConfirmDialogLitener mOnDialogSureLitener;
@@ -85,7 +87,7 @@ public class ConfirmDialog extends BaseNiceDialog {
     public void convertView(ViewHolder holder, final BaseNiceDialog dialog) {
 
         holder.setText(R.id.tv_content, contentStr);
-        holder.setImageVisible(R.id.iv_close, isShowIvClose);
+        holder.setViewVisible(R.id.iv_close, isShowIvClose ? View.VISIBLE : View.GONE);
 
         holder.setOnClickListener(R.id.tv_sure, new View.OnClickListener() {
             @Override
@@ -98,7 +100,7 @@ public class ConfirmDialog extends BaseNiceDialog {
         });
 
         if (btnNum == AppGlobal.BTN_NUM_DOUBLE) {
-            holder.setTextVisible(R.id.tv_negative, true);
+            holder.setViewVisible(R.id.tv_negative, View.VISIBLE);
             holder.setOnClickListener(R.id.tv_negative, new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -106,7 +108,7 @@ public class ConfirmDialog extends BaseNiceDialog {
                 }
             });
         } else if (btnNum == AppGlobal.BTN_NUM_SINGLE) {
-            holder.setTextVisible(R.id.tv_negative, false);
+            holder.setViewVisible(R.id.tv_negative, View.GONE);
         }
 
 

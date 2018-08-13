@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn2:
                 showDialog2();
                 break;
-            //            case R.id.btn3:
-            //                showDialog3();
-            //                break;
-            //            case R.id.btn4:
-            //                showDialog4();
-            //                break;
+            case R.id.btn3:
+                showDialog3();
+                break;
+            case R.id.btn4:
+                showDialog4();
+                break;
             //            case R.id.btn5:
             //                showDialog5();
             //                break;
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
 
     private void showDialog0() {
         ConfirmDialog.newInstance("测试数据测试测试测试")
@@ -86,5 +87,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setOutCancel(true)
                 .show(getSupportFragmentManager());
 
+    }
+
+    /**
+     * 分享
+     */
+    private void showDialog3() {
+
+        ShareDialog.newInstance(1).setOnOnShareDialogLitener(new OnShareDialogLitener() {
+            @Override
+            public void onShareDialogTypeClick(int mPlatform) {
+                Toast.makeText(MainActivity.this, mPlatform + "....", Toast.LENGTH_SHORT).show();
+            }
+        }).setOutCancel(false)
+                .show(getSupportFragmentManager());
+    }
+
+    private void showDialog4() {
+
+        ShareDialog.newInstance(0).setOnOnShareDialogLitener(new OnShareDialogLitener() {
+            @Override
+            public void onShareDialogTypeClick(int mPlatform) {
+                Toast.makeText(MainActivity.this, mPlatform + "....", Toast.LENGTH_SHORT).show();
+            }
+        })
+                .setShowGrivity(AppGlobal.SHOW_GRAVITY_BOTTOM)
+                .setOutCancel(true)
+                .show(getSupportFragmentManager());
     }
 }

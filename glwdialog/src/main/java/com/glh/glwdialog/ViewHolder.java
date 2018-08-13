@@ -2,7 +2,6 @@ package com.glh.glwdialog;
 
 import android.util.SparseArray;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ViewHolder {
@@ -47,15 +46,11 @@ public class ViewHolder {
         textView.setTextColor(colorId);
     }
 
-    public void setTextVisible(int viewId, boolean isVisibility) {
-        TextView textView = getView(viewId);
-        textView.setVisibility(isVisibility ? View.VISIBLE : View.GONE);
+    public void setViewVisible(int viewId, int visibilityType) {
+        View view = getView(viewId);
+        view.setVisibility(visibilityType);
     }
 
-    public void setImageVisible(int viewId, boolean isVisibility) {
-        ImageView imageView = getView(viewId);
-        imageView.setVisibility(isVisibility ? View.VISIBLE : View.GONE);
-    }
 
     public void setOnClickListener(int viewId, View.OnClickListener clickListener) {
         View view = getView(viewId);
